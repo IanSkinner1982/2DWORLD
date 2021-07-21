@@ -1,1 +1,19 @@
-
+1 rem copyright ian m. skinner
+5 rem 10-100: worldgen
+6 rem 110-150: pokeworld
+10 dimwd(39,24):z=0
+20 fory=0to39
+30 forx=0to10:wd(y,x)=14:next:rem layer one
+40 forx=11to18:rem layer two
+50 a=int(rnd(ti)*2)+1
+60 ifa=1thenwd(y,x)=14:next
+70 wd(y,x)=5:wd(y,x+1)=9:x=x+1
+80 x=x+1:wd(y,x)=11:ifx<18then80:next
+90 forx=19to24:rem layer three
+100 wd(y,x)=11:next:next
+110 forx=0to24
+120 fory=0to39
+130 poke55296+z,wd(y,x)
+140 poke1024+z,160:z=z+1
+150 next:next
+160 goto160
